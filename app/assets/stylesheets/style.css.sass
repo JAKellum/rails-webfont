@@ -1,0 +1,232 @@
+@import "foundation_and_overrides"
+@import "foundation.scss"
+
+body
+  background-color: $secondary-color
+.top-section
+  background-color: $secondary-color
+  position: fixed
+  width: 100%
+  z-index: 1
+  header
+    padding: 0
+    nav
+      @include grid-row
+      @include grid-column(12)
+      ul
+        @include grid-row
+        margin: 0
+        li
+          display: inline-block
+          height: em-calc(55)
+        li.title
+          @include grid-column(2)
+          font-size: em-calc(24)
+          font-weight: 300
+          text-align: center
+          padding: em-calc(10 0 0 0)
+        li.home-button
+          @include grid-column(5)
+          padding: em-calc(10 0 0 0)
+          a
+            background: url('images/back-to-home.png') no-repeat
+            text-indent: -9999px
+            display: block
+            height: em-calc(35)
+          a:hover
+            background-image: url('images/back-to-home-hover.png')
+            background-repeat: no-repeat
+.mid-section
+  width: 100%
+  background-color: #fafafa
+  .wrapper
+    @include grid-row
+    @include grid-column(12)
+    background-color: #fafafa
+    float: none
+    padding-bottom: em-calc(20)
+    .button-wrap
+      text-align: center
+      .current
+        background-color: $primary-color
+        color: white
+    .slider-container
+      @include grid-row
+      padding: em-calc(30 0)
+      .mood-list-left
+        @include grid-column(3)
+        padding: 0
+        h3
+          margin-bottom: em-calc(80)
+        h3:last-child
+          margin-bottom: 0
+      .sliders
+        @include grid-column(6)
+        padding: 0
+      .mood-list-right
+        @include grid-column(3)
+        padding: 0
+        h3
+          margin-bottom: em-calc(80)
+          text-align: right
+        h3:last-child
+          margin-bottom: 0
+    .type-style
+      @include grid-row
+      .headline-style
+        @include grid-column(6)
+        display: inline-block
+        text-align: center
+        padding: 0
+        h4
+          color: $primary-color
+        p
+          margin-bottom: 0
+      .body-style
+        @include grid-column(6)
+        display: inline-block
+        text-align: center
+        padding: 0
+        h4
+          color: $primary-color
+        p
+          margin-bottom: 0
+.center
+  text-align: center
+.green
+  h2
+    color: $primary-color
+h1, h2, h3, h4
+  font-family: 'Lato', sans-serif
+  color: $body-font-color
+  font-weight: 300
+h1
+  margin: em-calc(75 0 35 0)
+  font-size: em-calc(42)
+h1.brand
+  font-size: em-calc(60)
+  margin: em-calc(100 0 30 0)
+h1.title
+  margin: em-calc(20 0 30 0)
+h2.blockquote
+  font-size: em-calc(28)
+  margin-bottom: em-calc(20)
+p
+  font-family: Garamond, serif
+  font-size: em-calc(18)
+.button
+  background-color: $secondary-color
+  color: $body-font-color
+p
+  a.button
+    margin: em-calc(20 0 0 0)
+    padding: em-calc(35 0)
+    font-family: Garamond, serif
+    font-size: em-calc(24)
+    font-weight: 300
+    font-style:  italic
+a.modal.button
+  margin: em-calc(35 0 0 0)
+  padding: em-calc(35 0)
+  font-family: Garamond, serif
+  font-size: em-calc(24)
+  font-weight: 300
+  font-style:  italic
+.reveal-modal
+  word-wrap: break-word
+ol
+  margin-top: em-calc(75)
+  margin-bottom: em-calc(75)
+  li
+    margin-bottom: em-calc(20)
+span.title
+  display: block
+  font-size: em-calc(30)
+  font-weight: 300
+  padding: em-calc(10)
+span.desc
+  display: block
+  font-family: Garamond, serif
+  font-style: italic
+  font-size: em-calc(18)
+  padding-bottom: em-calc(15)
+span.examples
+  display: block
+  font-weight: 300
+  padding-bottom: em-calc(15)
+ul.button-group
+  margin: 100px auto 10px
+  display: inline-block
+  text-align: center
+  li.button
+    margin-right: em-calc(20)
+.btm-section
+  background-color: $secondary-color
+  width: 100%
+  footer
+    @include grid-row
+    @include grid-column(12)
+    float: none
+    text-align: center
+    nav.crumbs
+      ul
+        margin: em-calc(20 0 20 0)
+      li
+        width: 100%
+      a
+        display: inline-block
+        float: left
+        height: em-calc(60)
+        background: #fafafa
+        margin: 0 2% 0 0
+        color: #717171
+        position: relative
+        padding: 20px 5% 20px 10%
+        text-align: center
+      a:first-child
+        padding: 20px 5%
+        border-top-left-radius: 5px
+        border-bottom-left-radius: 5px
+      a:last-child
+        margin: em-calc(0)
+        border-top-right-radius: 5px
+        border-bottom-right-radius: 5px
+      .active
+        background: $primary-color
+        color: white
+      .active:after
+        background: $primary-color
+      a:before
+        content: ""
+        position: absolute
+        left: -20px
+        top: 10px
+        height: em-calc(40)
+        width: em-calc(40)
+        -webkit-transform: rotate(45deg)
+        -moz-transform: rotate(45deg)
+        -o-transform: rotate(45deg)
+        -ms-transform: rotate(45deg)
+        transform: rotate(45deg)
+        background-color: $secondary-color
+        border-radius: em-calc(0 0 0 100)
+        z-index: 0
+      a:first-child:before
+        content: none
+      a:after
+        content: ""
+        position: absolute
+        right: -20px
+        top: 10px
+        height: em-calc(40)
+        width: em-calc(40)
+        -webkit-transform: rotate(45deg)
+        -moz-transform: rotate(45deg)
+        -o-transform: rotate(45deg)
+        -ms-transform: rotate(45deg)
+        transform: rotate(45deg)
+        background-color: #fafafa
+        border-radius: em-calc(0 0 0 100)
+        z-index: 1
+      a:last-child:after
+        content: none

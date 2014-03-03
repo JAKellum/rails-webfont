@@ -1,0 +1,25 @@
+.top-section
+  %header
+    %nav
+      %ul
+        %li.home-button= link_to "Back to home", root_path
+        %li.title Webfont
+.mid-section
+  .wrapper
+    %h1 Determine your audience. What is the tone of the content?
+    = link_to "/pairs/mood.html", class: "button expand radius" do
+      %span.title Formal
+      %span.desc in accordance with rules of convention
+      %span.examples Used in: Newspapers, Textbooks, Signs, Maps
+    = link_to "/pairs/mood.html", class: "button expand radius" do
+      %span.title Casual
+      %span.desc done without serious intent
+      %span.examples Used in: Personal Blogs, Posters, CD Covers
+.btm-section
+  %footer
+    %nav.crumbs
+      %ul
+        = link_to "Tone", "#", class: "active"
+        = link_to "Mood", "#"
+        = link_to "Results", "#"
+        = link_to "Export", "#"
