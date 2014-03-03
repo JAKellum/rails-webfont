@@ -1,0 +1,24 @@
+.top-section
+  %header
+    %nav
+      %ul
+        %li.home-button= link_to "Back to home", "http://localhost:4567/ui/home.html"
+        %li.title Webfont
+.mid-section
+  .wrapper
+    %h1.brand Webfont App
+    %p Looking for a combination of webfonts to use? Not a problem. We've streamlined the process of selecting, down into just four steps:
+    %ol
+      %li Tone
+      %li Mood
+      %li Results
+      %li Export
+    %p= link_to "Let's get started", pairs_for_reals_go_path, class: "button expand radius"
+.btm-section
+  %footer
+    %nav.crumbs
+      %ul
+        = link_to "Tone", "#"
+        = link_to "Mood", "#"
+        = link_to "Results", "#"
+        = link_to "Export", "#"

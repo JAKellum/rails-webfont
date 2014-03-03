@@ -1,0 +1,33 @@
+.top-section
+  %header
+    %nav
+      %ul
+        %li.home-button= link_to "Back to home", root_path
+        %li.title Webfont
+.mid-section
+  .wrapper.center.green
+    %h1 Your Results...
+    %h2 Headline
+    %h3 Helvetica
+    %h2 Body
+    %h3 Garamond
+    %a.modal.button.expand.radius{"data-reveal" => "", "data-reveal-id" => "myModal", :href => "#"} View Code
+    #myModal.reveal-modal{"data-reveal" => ""}
+      %h2 You're almost done.
+      %p Include this into the head of your html:
+      %p
+        %pre &lt;link href='http://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'&gt;
+      %p Add these properties to your CSS styles:
+      %p
+        %pre font-family: 'Open Sans', sans-serif;
+        %pre font-family: 'EB Garamond', serif;
+      %a.close-reveal-modal ×
+    %p= link_to "Export PDF", "export.html", class: "button expand radius second"
+.btm-section
+  %footer
+    %nav.crumbs
+      %ul
+        = link_to "Tone", "go.html", class: "active"
+        = link_to "Mood", "mood.html", class: "active"
+        = link_to "Results", "results.html", class: "active"
+        = link_to "Export", "#", class: "active"
