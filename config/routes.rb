@@ -4,7 +4,8 @@ RailsWebfont::Application.routes.draw do
   get 'pairs/mood'
   get 'pairs/results'
   get 'pairs/export'
-
+  get 'pairs/casual' => 'pairs#casual_pairs'
+  get 'pairs/formal' => 'pairs#formal_pairs'
   root 'pairs#home'
   # See how all your routes lay out with "rake routes".
 
