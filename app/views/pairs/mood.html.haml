@@ -13,17 +13,22 @@
         %h3 Light
         %h3 Modern
         / %h3 Cold
+
       .sliders
-        %input{"data-slider" => "true", "data-slider-range" => "100,500", "data-slider-snap" => "true", "data-slider-step" => "100", :type => "text"}/
-        %input{"data-slider" => "true", "data-slider-range" => "100,500", "data-slider-snap" => "true", "data-slider-step" => "100", :type => "text"}/
-        %input{"data-slider" => "true", "data-slider-range" => "100,500", "data-slider-snap" => "true", "data-slider-step" => "100", :type => "text"}/
+        %input#slider1{"data-slider" => "true", "data-slider-range" => "1,5", "data-slider-snap" => "true", "data-slider-step" => "1", :type => "text"}/
+        %input#slider2{"data-slider" => "true", "data-slider-range" => "1,5", "data-slider-snap" => "true", "data-slider-step" => "1", :type => "text"}/
+        %input#slider3{"data-slider" => "true", "data-slider-range" => "1,5", "data-slider-snap" => "true", "data-slider-step" => "1", :type => "text"}/
         / %input{"data-slider" => "true", "data-slider-range" => "100,500", "data-slider-snap" => "true", "data-slider-step" => "100", :type => "text"}/
       .mood-list-right
         %h3 Serious
         %h3 Dramatic
         %h3 Classical
         / %h3 Warm
-    %p= link_to "Create Results", "/pairs/results.html", class: "button expand radius"
+      = form_tag("/pairs/mood", method: "post") do
+        = hidden_field_tag (:a1)
+        = hidden_field_tag (:a2)
+        = hidden_field_tag (:a3)
+        %button.button.expand.radius{ type: "submit" } Create Results
 .btm-section
   %footer
     %nav.crumbs
@@ -32,3 +37,6 @@
         = link_to "Mood", "#", class: "active"
         = link_to "Results", "#"
         = link_to "Export", "#"
+
+:javascript
+  bind_sliders();

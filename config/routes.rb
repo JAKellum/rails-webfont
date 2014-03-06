@@ -2,6 +2,7 @@ RailsWebfont::Application.routes.draw do
 
   get 'pairs/tone'
   get 'pairs/mood'
+  post 'pairs/mood' => 'pairs#search'
   get 'pairs/results'
   get 'pairs/export'
 
