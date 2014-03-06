@@ -25,10 +25,13 @@
         %h3 Classical
         / %h3 Warm
       = form_tag("/pairs/mood", method: "post") do
-        = hidden_field_tag (:a1)
-        = hidden_field_tag (:a2)
-        = hidden_field_tag (:a3)
-        %button.button.expand.radius{ type: "submit" } Create Results
+        = hidden_field_tag(:a1)
+        = hidden_field_tag(:a2)
+        = hidden_field_tag(:a3)
+        %button.button.expand.radius{ type:"submit" } Create Results
+    %h1
+      = @pairs.first.body_font
+
 .btm-section
   %footer
     %nav.crumbs
@@ -38,5 +41,16 @@
         = link_to "Results", "#"
         = link_to "Export", "#"
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 :javascript
-  bind_sliders();
+  $(document).ready( function() {
+    $('#slider1').bind("slider:changed", function(event, data) {
+      $('#a1').val(data.value);
+    });
+    $('#slider2').bind("slider:changed", function(event, data) {
+       $('#a2').val(data.value);
+    });
+    $('#slider3').bind("slider:changed", function(event, data) {
+      $('#a3').val(data.value);
+    });
+  });
