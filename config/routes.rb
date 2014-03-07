@@ -1,11 +1,13 @@
 RailsWebfont::Application.routes.draw do
-  get "public/index"
-  get "pairs_for_reals/go"
-  get "pairs_for_reals/mood"
-  get "pairs_for_reals/export"
-  get "pairs_for_reals/results"
-  get "pairs_for_reals/export"
-  # The priority is based upon order of creation: first created -> highest priority.
+
+  get 'pairs/tone'
+  get 'pairs/mood'
+  post 'pairs/mood' => 'pairs#search'
+  get 'pairs/results'
+  get 'pairs/export'
+  get 'pairs/casual' => 'pairs#casual_pairs'
+  get 'pairs/formal' => 'pairs#formal_pairs'
+  root 'pairs#home'
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

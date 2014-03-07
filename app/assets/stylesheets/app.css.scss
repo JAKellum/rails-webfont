@@ -1,5 +1,6 @@
-@import 'foundation';
-@import 'foundation_and_overrides';
+@import "foundation_and_overrides";
+@import "foundation.scss";
+
 
 header {
   @include grid-row;
@@ -9,25 +10,25 @@ header {
 
 }
 
- .wrapper{
-   @include grid-column(12);
-   }
+// .wrapper{
+//   @include grid-column(12);
+//   }
 
 .main-content {
   @include grid-row;
 
   aside  {
     @include grid-column($columns:6);
-     @media #{$medium-up} {
-       @include grid-column($columns:3);
-     }
+    // @media #{$medium-up} {
+    //   @include grid-column($columns:3);
+    // }
   }
 
   article  {
     @include grid-column($columns:6);
-     @media #{$medium-up} {
-       @include grid-column($columns:8, $offset: 1);
-     }
+    // @media #{$medium-up} {
+    //   @include grid-column($columns:8, $offset: 1);
+    // }
   }
 
 }

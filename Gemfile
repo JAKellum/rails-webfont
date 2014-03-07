@@ -6,6 +6,7 @@ ruby '2.1.0'
 gem 'rails', '~> 4.0.2'
 gem 'pg'
 gem 'foundation-rails'
+gem 'prawn', '~> 0.15.0'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -13,6 +14,7 @@ group :development, :test do
   gem 'spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
+  gem 'pry'
 end
 
 group :development do
