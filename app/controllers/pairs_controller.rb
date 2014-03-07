@@ -20,7 +20,7 @@ class PairsController < ApplicationController
   end
 
   def search
-    redirect_to action: 'export', slider1: params[:a1], slider2: params[:a2], slider3: params[:a3]
+    redirect_to action: 'export', slider1: params[:slider1], slider2: params[:slider2], slider3: params[:slider3]
   end
 
   def category

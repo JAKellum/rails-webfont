@@ -7,6 +7,7 @@ gem 'rails', '~> 4.0.2'
 gem 'pg'
 gem 'foundation-rails'
 gem 'prawn', '~> 0.15.0'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'rspec-rails'
