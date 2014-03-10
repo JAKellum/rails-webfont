@@ -15,11 +15,10 @@
           %h3 Modern
           / %h3 Cold
         .sliders
-          %input#slider1{:type => "hidden", "name" => "slider1"}/
-          %input#slider2{:type => "hidden", "name" => "slider2"}/
-          %input#slider3{:type => "hidden", "name" => "slider3"}/
-        //%script{type: "text/javascript", src: "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
-        //%script{type: "text/javascript", src: "/assets/simple-slider.js"}
+          %input#slider1{:type => "hidden", "name" => "slider1"}
+          %input#slider2{:type => "hidden", "name" => "slider2"}
+          %input#slider3{:type => "hidden", "name" => "slider3"}
+
         :javascript
           $('#slider1').simpleSlider({range: [1,5],snap: true,step: 1});
           $('#slider2').simpleSlider({range: [1,5],snap: true,step: 1});

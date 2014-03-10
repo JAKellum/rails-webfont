@@ -8,6 +8,10 @@ RailsWebfont::Application.routes.draw do
   get 'pairs/casual' => 'pairs#casual_pairs'
   get 'pairs/formal' => 'pairs#formal_pairs'
   root 'pairs#home'
+
+  # scope 'pairs/export' do
+  #   '/casual' =>  
+  #   '/formal' =>
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

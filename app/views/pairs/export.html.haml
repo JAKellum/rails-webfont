@@ -16,7 +16,7 @@
       %h2 You're almost done.
       %p Include this into the head of your html:
       %p
-        %pre &lt;link href="#{@link}" rel='stylesheet' type='text/css'&gt;
+        %pre &lt;link href="#{@linkpair.link}" rel='stylesheet' type='text/css'&gt;
       %p Add these properties to your CSS styles:
       %p
         %pre font-family: 'Open Sans', sans-serif;
@@ -25,7 +25,7 @@
     %p= link_to "Export PDF", "/pairs/export.html", class: "button expand radius second"
     / %p.button.expand.radius.second Export PDF
     %p= "Here is your test pair #{@pairnames}"
-    %p= "Here is your link #{@link}"
+    %p= "Here is your link #{@linkpair.link}"
 
 .btm-section
   %footer
