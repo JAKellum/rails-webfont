@@ -7,9 +7,7 @@ class Pair < ActiveRecord::Base
   end
 
   def self.get_link_pair(slider1, slider2, slider3, category)
-    # binding.pry
     Pair.find_by(slider1: slider1, slider2: slider2, slider3: slider3, category_id: category)
-    # pair.headline_font + '|' + pair.body_font
   end
 
   def link
