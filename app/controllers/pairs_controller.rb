@@ -10,7 +10,8 @@ class PairsController < ApplicationController
   end
 
   def export
-    @link = "http://fonts.googleapis.com/css?family=EB+Garamond|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+    linkpair = Pair.get_link_pair(params[:slider1], params[:slider2], params[:slider3])
+    @link = Pair.link(linkpair)
 =begin
     name = params[:s1] + ".pdf"
     Prawn::Document.generate "#{name}" do |pdf|
@@ -28,15 +29,17 @@ class PairsController < ApplicationController
   end
 
   def casual_pairs
-    category = Category.where(name: 'casual').to_a
-    @pairs = category.first.pairs.each
+    category = Category.casual
     render 'mood'
   end
 
   def formal_pairs
-    category = Category.where(name: 'formal').to_a
-    @pairs = category.first.pairs.each
+    category = Category.formal
     render 'mood'
+  end
+
+  def selected_pair(selected_category)
+    @pairs = selected_category.first.pairs
   end
 
   def find_category_of_pair
