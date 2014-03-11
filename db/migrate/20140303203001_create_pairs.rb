@@ -11,7 +11,7 @@ class CreatePairs < ActiveRecord::Migration
       t.integer :category_id
       t.timestamps
 
-      add_index :unique_pairs, [:headline_font, :body_font], :unique => true
+       add_index :pairs, [:headline_font, :body_font], :unique => true
     end
   end
 end
