@@ -16,6 +16,7 @@ group :development, :test do
   gem 'guard-spork'
   gem 'childprocess'
   gem 'pry'
+  gem 'binding_of_caller'
 end
 
 group :development do
