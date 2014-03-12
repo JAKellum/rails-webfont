@@ -11,6 +11,7 @@ class Pair < ActiveRecord::Base
   end
 
   def link
-    "http://fonts.googleapis.com/css?family=" + self.headline_font + "|" + self.body_font + ":300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+    link = "http://fonts.googleapis.com/css?family=" + self.headline_font + "|" + self.body_font
+    link.gsub! ' ', '%20'
   end
 end

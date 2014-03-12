@@ -8,9 +8,9 @@
   .wrapper.center.green
     %h1 Your Results...
     %h2 Headline
-    %h3 Helvetica
+    %h3 #{@linkpair.headline_font}
     %h2 Body
-    %h3 Garamond
+    %h3 #{@linkpair.body_font}
     %a.modal.button.expand.radius{"data-reveal" => "", "data-reveal-id" => "myModal", :href => "#"} View Code
     #myModal.reveal-modal{"data-reveal" => ""}
       %h2 You're almost done.
@@ -19,13 +19,11 @@
         %pre &lt;link href="#{@linkpair.link}" rel='stylesheet' type='text/css'&gt;
       %p Add these properties to your CSS styles:
       %p
-        %pre font-family: 'Open Sans', sans-serif;
-        %pre font-family: 'EB Garamond', serif;
+        %pre font-family: '#{@linkpair.headline_font}', sans-serif;
+        %pre font-family: '#{@linkpair.body_font}', serif;
       %a.close-reveal-modal ×
     %p= link_to "Export PDF", "/pairs/export.html", class: "button expand radius second"
     / %p.button.expand.radius.second Export PDF
-    %p= "Here is your test pair #{@pairnames}"
-    %p= "Here is your link #{@linkpair.link}"
 
 .btm-section
   %footer
