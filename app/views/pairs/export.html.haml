@@ -15,13 +15,12 @@
     #myModal.reveal-modal{"data-reveal" => ""}
       %h2 You're almost done.
       %p Include this into the head of your html:
-      %p
-        %pre
-          %a{href: @linkpair.link}
+      %pre &lt;link rel="stylesheet" href="#{@linkpair.link}"&gt;
       %p Add these properties to your CSS styles:
-      %p
-        %pre font-family: "#{@linkpair.headline_font}", sans-serif;
-        %pre font-family: "#{@linkpair.body_font}", serif;
+      %pre
+        font-family: "#{@linkpair.headline_font}", sans-serif;
+        %br
+        font-family: "#{@linkpair.body_font}", serif;
       %a.close-reveal-modal ×
     %p= link_to "Export PDF", "/pairs/export.html", class: "button expand radius second"
 
