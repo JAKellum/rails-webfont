@@ -16,7 +16,8 @@
       %h2 You're almost done.
       %p Include this into the head of your html:
       %p
-        %pre &lt;link href="#{@linkpair.link}" rel='stylesheet' type='text/css'&gt;
+        %pre
+          %a{href: @linkpair.link}
       %p Add these properties to your CSS styles:
       %p
         %pre font-family: '#{@linkpair.headline_font}', sans-serif;
