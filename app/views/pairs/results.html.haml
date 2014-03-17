@@ -26,7 +26,7 @@
         %h4 Body Choice:
         %p{style: "font-family: #{@linkpair.body_font};"}
           = @linkpair.body_font
-    %p= link_to "Use this type style", "/pairs/export.html", class: "button expand radius"
+    %p= link_to "Use this type style", pairs_export_path, class: "button expand radius"
 .btm-section
   %footer
     %nav.crumbs

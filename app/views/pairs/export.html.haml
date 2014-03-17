@@ -20,11 +20,10 @@
           %a{href: @linkpair.link}
       %p Add these properties to your CSS styles:
       %p
-        %pre font-family: '#{@linkpair.headline_font}', sans-serif;
-        %pre font-family: '#{@linkpair.body_font}', serif;
+        %pre font-family: "#{@linkpair.headline_font}", sans-serif;
+        %pre font-family: "#{@linkpair.body_font}", serif;
       %a.close-reveal-modal ×
     %p= link_to "Export PDF", "/pairs/export.html", class: "button expand radius second"
-    / %p.button.expand.radius.second Export PDF
 
 .btm-section
   %footer
