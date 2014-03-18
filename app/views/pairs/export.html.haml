@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{@linkpair.headline_font}|#{@linkpair.body_font}">
 .top-section
   %header
     %nav
@@ -8,9 +9,9 @@
   .wrapper.center.green
     %h1 Your Results...
     %h2 Headline
-    %h3 #{@linkpair.headline_font}
+    %h3{style: "font-family: '#{@linkpair.headline_font}', sans-serif;"} #{@linkpair.headline_font}
     %h2 Body
-    %h3 #{@linkpair.body_font}
+    %h3{style: "font-family: '#{@linkpair.body_font}', serif;"} #{@linkpair.body_font}
     %a.modal.button.expand.radius{"data-reveal" => "", "data-reveal-id" => "myModal", :href => "#"} View Code
     #myModal.reveal-modal{"data-reveal" => ""}
       %h2 You're almost done.
