@@ -14,6 +14,20 @@ Category.create([
 ## except for the last.
 Pair.delete_all
 Pair.create([
+  { headline_font: 'Pompiere',
+    body_font: 'Flamenco',
+    category_id: Category.where(name: 'formal').first.id,
+    slider1: 1,
+    slider2: 1,
+    slider3: 1
+  },
+  { headline_font: 'Shadows Into Light Two',
+    body_font: 'Raleway',
+    category_id: Category.where(name: 'casual').first.id,
+    slider1: 1,
+    slider2: 1,
+    slider3: 1
+  },
   { headline_font: 'Quando',
     body_font: 'Varela Round',
     category_id: Category.where(name: 'casual').first.id,
