@@ -16,3 +16,20 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+/*function toggleCurrent(button) {
+  $(button).toggleClass('current');
+}*/
+$(function() {
+  $('li.button.radius').click(function(){
+    $('.current').removeClass('current');
+    $(this).toggleClass('current');
+  })
+});
+
+$.ajax({
+    url: "/results/_",
+      cache: false
+})
+  .done(function( html ) {
+        $( "#results" ).append( html );
+          });
