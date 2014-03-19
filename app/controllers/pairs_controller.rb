@@ -46,7 +46,8 @@ class PairsController < ApplicationController
                                             :slider3 => params[:slider3],
                                             :category => Category.find_by_name(params[:category]))
     end
-    #binding.pry
+    @linkpair2 ||= @linkpair
+    @linkpair3 ||= @linkpair
 
     session[:pair_id] = @linkpair.id
   end
@@ -77,9 +78,9 @@ class PairsController < ApplicationController
 
   def mood
   end
-    
+
     private
-    
+
         def at_limit?(slider)
             slider == 1 || slider == 5 ? true : false
         end
