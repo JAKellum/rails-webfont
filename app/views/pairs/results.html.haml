@@ -63,6 +63,6 @@
     %nav.crumbs
       %ul
         = link_to "Tone", "/pairs/tone.html", class: "active"
-        = link_to "Mood", "/pairs/mood.html", class: "active"
+        = link_to "Mood", "/pairs/#{params[:category]}", class: "active"
         = link_to "Results", "#", class: "active"
         = link_to "Export", pairs_export_path
