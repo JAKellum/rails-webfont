@@ -3,17 +3,12 @@ class PairsController < ApplicationController
   def export
     @linkpair = Pair.find(params[:font_id])
     name = params[:font_id] + ".pdf"
-    Prawn::Document.generate "public/assets/pdf/#{name}" do |pdf|
-      pdf.text @link
-    end
     session[:font_id] = params[:font_id]
   end
 
   def download
     send_file "#{Rails.root}/public/assets/pdf/#{session[:font_id]}.pdf", type: 'application/pdf'
   end
-
-  helper_method :download
 
   def results
     @linkpair = find_pair(params[:slider1], params[:slider2], params[:slider3], params[:category])
@@ -30,9 +25,6 @@ class PairsController < ApplicationController
                 @linkpair2 = find_pair(params[:slider1].to_i + 1, params[:slider2], params[:slider3],params[:category])
                 @linkpair3 = find_pair(params[:slider1].to_i - 1, params[:slider2], params[:slider3],params[:category])
     end
-    @linkpair2 ||= @linkpair
-    @linkpair3 ||= @linkpair
-
   end
 
   def search
@@ -58,11 +50,37 @@ class PairsController < ApplicationController
     private
 
         def at_limit?(slider)
-            slider == 1 || slider == 5 ? true : false
+          slider == 1 || slider == 5 ? true : false
         end
 
         def find_pair(slider1, slider2, slider3, category)
-          Pair.find_by(slider1: slider1, slider2: slider2, slider3: slider3, category_id: Category.find_by_name(category))
+         pair = Pair.find_by(slider1: slider1, slider2: slider2, slider3: slider3, category_id: Category.find_by_name(category))
+         if pair
+           pair
+         end
+
+         if !pair
+          [1,2,3,4].each do |x|
+            pair = Pair.find_by(slider1: (slider1.to_i - x).abs.to_s, slider2: slider2, slider3: slider3, category_id: Category.find_by_name(category))
+            break if pair
+            end
+         end
+
+        if !pair
+          [1,2,3,4].each do |x|
+            pair = Pair.find_by(slider1: slider1, slider2: (slider2.to_i - x).abs.to_s, slider3: slider3, category_id: Category.find_by_name(category))
+            break if pair
+            end
+        end
+
+         if !pair
+          [1,2,3,4].each do |x|
+            pair = Pair.find_by(slider1: slider1, slider2: slider2, slider3: (slider3.to_i - x).abs.to_s, category_id: Category.find_by_name(category))
+            break if pair
+            end
+        end
+
+         return pair || Pair.find(4)
         end
 end
 
