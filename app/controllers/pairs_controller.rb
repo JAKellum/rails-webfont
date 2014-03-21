@@ -3,66 +3,6 @@ class PairsController < ApplicationController
   def export
     @linkpair = Pair.find(session[:pair_id])
   end
-=begin
-    name = params[:s1] + ".pdf"
-    Prawn::Document.generate "#{name}" do |pdf|
-      pdf.text @link
-    end
-=end
-
-  def results
-    @linkpair = Pair.find_by(:slider1 => params[:slider1],
-                             :slider2 => params[:slider2],
-                             :slider3 => params[:slider3],
-                             :category => Category.find_by_name(params[:category]))
-    case params[:slider1]
-        when at_limit?(params[:slider1])
-            if params[:slider1] == 1
-                @linkpair2 = Pair.find_by(:slider1 => params[:slider1].to_i + 1,
-                                            :slider2 => params[:slider2],
-                                            :slider3 => params[:slider3],
-                                            :category => Category.find_by_name(params[:category]))
-                @linkpair3 = Pair.find_by(:slider1 => params[:slider1].to_i + 2,
-                                            :slider2 => params[:slider2],
-                                            :slider3 => params[:slider3],
-                                            :category => Category.find_by_name(params[:category]))
-            else
-                @linkpair2 = Pair.find_by(:slider1 => params[:slider1].to_i - 1,
-                                            :slider2 => params[:slider2],
-                                            :slider3 => params[:slider3],
-                                            :category => Category.find_by_name(params[:category]))
-                @linkpair3 = Pair.find_by(:slider1 => params[:slider1].to_i - 2,
-                                            :slider2 => params[:slider2],
-                                            :slider3 => params[:slider3],
-                                            :category => Category.find_by_name(params[:category]))
-            end
-        else
-                @linkpair2 = Pair.find_by(:slider1 => params[:slider1].to_i + 1,
-                                            :slider2 => params[:slider2],
-                                            :slider3 => params[:slider3],
-                                            :category => Category.find_by_name(params[:category]))
-                @linkpair3 = Pair.find_by(:slider1 => params[:slider1].to_i - 1,
-                                            :slider2 => params[:slider2],
-                                            :slider3 => params[:slider3],
-                                            :category => Category.find_by_name(params[:category]))
-    end
-    @linkpair2 ||= @linkpair
-    @linkpair3 ||= @linkpair
-
-    session[:pair_id] = @linkpair.id
-  end
-
-=begin
-    name = params[:s1] + ".pdf"
-    Prawn::Document.generate "#{name}" do |pdf|
-      pdf.text @link
-    end
-=end
-
-    @linkpair = Pair.find(params[:font_id])
-    name = params[:font_id] + ".pdf"
-    session[:font_id] = params[:font_id]
-  end
 
   def download
     send_file "#{Rails.root}/public/assets/pdf/#{session[:font_id]}.pdf", type: 'application/pdf'
