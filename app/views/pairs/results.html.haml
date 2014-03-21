@@ -12,10 +12,7 @@
         %li.button.radius.current{"data-headline_font" => @linkpair.headline_font, "data-body_font" => @linkpair.body_font} 1
         %li.button.radius{"data-headline_font" => @linkpair2.headline_font, "data-body_font" => @linkpair2.body_font} 2
         %li.button.radius{"data-headline_font" => @linkpair3.headline_font, "data-body_font" => @linkpair3.body_font} 3
-        %li.button.radius.current{"data-headline_font" => @linkpair.headline_font, "data-body_font" => @linkpair.body_font, "data-font_id" => @linkpair.id} 1
-        %li.button.radius{"data-headline_font" => @linkpair2.headline_font, "data-body_font" => @linkpair2.body_font, "data-font_id" => @linkpair2.id} 2
-        %li.button.radius{"data-headline_font" => @linkpair3.headline_font, "data-body_font" => @linkpair3.body_font, "data-font_id" => @linkpair3.id} 3
-
+        
     #alphabet
       %h1.title.h-result{style: "font-family: #{@linkpair.headline_font};"}The Origin of the Alphabet
       %p.b-result{style: "font-family: #{@linkpair.body_font};"} The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
@@ -31,10 +28,6 @@
           %p.b-result{style: "font-family: #{@linkpair.body_font};"}
             = @linkpair.body_font
       %p= link_to "Use this type style", pairs_export_path, class: "button expand radius"
-      = form_tag("/pairs/export", method: "get") do
-        = hidden_field_tag "font_id", @linkpair.id
-        %button.button.expand.radius{ type:"submit" } Use this type
-      /%p= link_to "Use this type style", pairs_export_path, class: "button expand radius"
 .btm-section
   %footer
     %nav.crumbs

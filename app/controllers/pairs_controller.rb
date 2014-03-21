@@ -4,10 +4,6 @@ class PairsController < ApplicationController
     @linkpair = Pair.find(session[:pair_id])
   end
 
-  def download
-    send_file "#{Rails.root}/public/assets/pdf/#{session[:font_id]}.pdf", type: 'application/pdf'
-  end
-
   def results
     @linkpair = find_pair(params[:slider1], params[:slider2], params[:slider3], params[:category])
     case params[:slider1]
@@ -49,9 +45,6 @@ class PairsController < ApplicationController
 
         def at_limit?(slider)
             slider == 1 || slider == 5 ? true : false
-        end
-
-          slider == 1 || slider == 5 ? true : false
         end
 
         def find_pair(slider1, slider2, slider3, category)
