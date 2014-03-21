@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{@linkpair.headline_font}|#{@linkpair.body_font}|#{@linkpair2.headline_font}|#{@linkpair2.body_font}|#{@linkpair3.headline_font}|#{@linkpair3.body_font}">
 .top-section
   %header
     %nav
@@ -8,26 +9,30 @@
   .wrapper
     .button-wrap
       %ul.button-group
-        %li.button.radius.current 1
-        %li.button.radius 2
-        %li.button.radius 3
-    %h1.title The Origin of the Alphabet
-    %p The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
-    %h2.blockquote "More important in its development however, was the picture."
-    %p We accordingly find evidences of devices to accomplish these ends associated with the earlist human remains. While the cave man was disputing food and shelter with the cave bear, the sabre-tooth tiger, and the mammoth in those
-    .type-style
-      .headline-style
-        %h4 Headline Choice:
-        %p Helvetica
-      .body-style
-        %h4 Body Choice:
-        %p Garamond
-    %p= link_to "Use this type style", "/pairs/export.html", class: "button expand radius"
+        %li.button.radius.current{"data-headline_font" => @linkpair.headline_font, "data-body_font" => @linkpair.body_font} 1
+        %li.button.radius{"data-headline_font" => @linkpair2.headline_font, "data-body_font" => @linkpair2.body_font} 2
+        %li.button.radius{"data-headline_font" => @linkpair3.headline_font, "data-body_font" => @linkpair3.body_font} 3
+
+    #alphabet
+      %h1.title.h-result{style: "font-family: #{@linkpair.headline_font};"}The Origin of the Alphabet
+      %p.b-result{style: "font-family: #{@linkpair.body_font};"} The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
+      %h2.blockquote.h-result{style: "font-family: #{@linkpair.headline_font};"}"More important in its development however, was the picture."
+      %p.b-result{style: "font-family: #{@linkpair.body_font};"} We accordingly find evidences of devices to accomplish these ends associated with the earlist human remains. While the cave man was disputing food and shelter with the cave bear, the sabre-tooth tiger, and the mammoth in those
+      .type-style
+        .headline-style
+          %h4 Headline Choice:
+          %p.h-result{style: "font-family: #{@linkpair.headline_font};"}
+            = @linkpair.headline_font
+        .body-style
+          %h4 Body Choice:
+          %p.b-result{style: "font-family: #{@linkpair.body_font};"}
+            = @linkpair.body_font
+      %p= link_to "Use this type style", pairs_export_path, class: "button expand radius"
 .btm-section
   %footer
     %nav.crumbs
       %ul
-        = link_to "Tone", "/pairs/tone.html", class: "active"
-        = link_to "Mood", "/pairs/mood.html", class: "active"
+        = link_to "Tone", "/pairs/tone", class: "active"
+        = link_to "Mood", "/pairs/#{params[:category]}", class: "active"
         = link_to "Results", "#", class: "active"
-        = link_to "Export", "#"
+        = link_to "Export", pairs_export_path

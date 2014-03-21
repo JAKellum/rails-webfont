@@ -18,7 +18,7 @@
           %input#slider1{:type => "hidden", "name" => "slider1"}
           %input#slider2{:type => "hidden", "name" => "slider2"}
           %input#slider3{:type => "hidden", "name" => "slider3"}
-
+          = hidden_field_tag "category", params[:category]
         :javascript
           $('#slider1').simpleSlider({range: [1,5],snap: true,step: 1});
           $('#slider2').simpleSlider({range: [1,5],snap: true,step: 1});

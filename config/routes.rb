@@ -5,12 +5,12 @@ RailsWebfont::Application.routes.draw do
   post 'pairs/mood' => 'pairs#search'
   get 'pairs/results'
   get 'pairs/export'
-  get 'pairs/casual' => 'pairs#casual_pairs'
-  get 'pairs/formal' => 'pairs#formal_pairs'
+  get 'pairs/casual' => 'pairs#casual_pairs', category: 'casual'
+  get 'pairs/formal' => 'pairs#formal_pairs', category: 'formal'
   root 'pairs#home'
 
   # scope 'pairs/export' do
-  #   '/casual' =>  
+  #   '/casual' =>
   #   '/formal' =>
   # See how all your routes lay out with "rake routes".
 
