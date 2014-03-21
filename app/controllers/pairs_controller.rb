@@ -1,7 +1,8 @@
 class PairsController < ApplicationController
 
   def export
-    @linkpair = Pair.find(session[:pair_id])
+    #@linkpair = Pair.find(session[:pair_id])
+    @linkpair = Pair.find(params[:font_id])
   end
 =begin
     name = params[:s1] + ".pdf"
