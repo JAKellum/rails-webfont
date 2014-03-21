@@ -8,6 +8,7 @@ RailsWebfont::Application.routes.draw do
   get 'pairs/casual' => 'pairs#casual_pairs', category: 'casual'
   get 'pairs/formal' => 'pairs#formal_pairs', category: 'formal'
   root 'pairs#home'
+  get "pairs/download"
 
   # scope 'pairs/export' do
   #   '/casual' =>

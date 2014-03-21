@@ -1,15 +1,19 @@
 class PairsController < ApplicationController
 
   def export
-    #@linkpair = Pair.find(session[:pair_id])
     @linkpair = Pair.find(params[:font_id])
-  end
-=begin
-    name = params[:s1] + ".pdf"
-    Prawn::Document.generate "#{name}" do |pdf|
+    name = params[:font_id] + ".pdf"
+    Prawn::Document.generate "public/assets/pdf/#{name}" do |pdf|
       pdf.text @link
     end
-=end
+    session[:font_id] = params[:font_id]
+  end
+
+  def download
+    send_file "#{Rails.root}/public/assets/pdf/#{session[:font_id]}.pdf", type: 'application/pdf'
+  end
+
+  helper_method :download
 
   def results
     @linkpair = find_pair(params[:slider1], params[:slider2], params[:slider3], params[:category])
@@ -30,13 +34,6 @@ class PairsController < ApplicationController
     @linkpair3 ||= @linkpair
 
   end
-
-=begin
-    name = params[:s1] + ".pdf"
-    Prawn::Document.generate "#{name}" do |pdf|
-      pdf.text @link
-    end
-=end
 
   def search
     redirect_to action: 'results', slider1: params[:slider1], slider2: params[:slider2], slider3: params[:slider3],
