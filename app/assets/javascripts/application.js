@@ -29,7 +29,7 @@ $(function() {
     bodies.css('font-family', newCurrent.attr('data-body_font'));
     headlines.last().html(newCurrent.attr('data-headline_font'));
     bodies.last().html(newCurrent.attr('data-body_font'));
-    $('#font_id').val(newCurrent.attr('data-font_id'));
+    $('#pair_id').val(newCurrent.attr('data-pair_id'));
   })
 });
 
