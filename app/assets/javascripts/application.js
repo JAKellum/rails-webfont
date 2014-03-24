@@ -24,7 +24,6 @@ $(function() {
         bodies = $('.b-result');
 
     $('li.current').removeClass('current');
-    newCurrent.toggleClass('current');
     newCurrent.addClass('current');
     headlines.css('font-family', newCurrent.attr('data-headline_font'));
     bodies.css('font-family', newCurrent.attr('data-body_font'));
