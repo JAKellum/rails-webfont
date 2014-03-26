@@ -31,7 +31,7 @@
   %footer
     %nav.crumbs
       %ul
-        = link_to "Tone", "/pairs/tone.html", class: "active"
-        = link_to "Mood", "/pairs/mood.html", class: "active"
-        = link_to "Results", "/pairs/results.html", class: "active"
+        = link_to "Tone", "/pairs/tone", class: "active"
+        = link_to "Mood", @mood_link, class: "active"
+        = link_to "Results", @results_link, class: "active"
         = link_to "Export", "#", class: "active"

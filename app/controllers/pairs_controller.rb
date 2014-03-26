@@ -2,28 +2,39 @@ class PairsController < ApplicationController
 
   def export
     @linkpair = Pair.find(params[:pair_id])
+    if session.loaded?
+      @results_link = "/pairs/results?category=" + session[:category] + "&slider1=" + session[:slider1] + "&slider2=" + session[:slider2] + "&slider3=" + session[:slider3]
+      @mood_link = "/pairs/" + session[:category]
+    else
+      @results_link = "#"
+      @mood_link = "#"
+    end
   end
 
   def results
-    @linkpair = find_pair(params[:slider1], params[:slider2], params[:slider3], params[:category])
-    case params[:slider1]
-        when at_limit?(params[:slider1])
-            if params[:slider1] == 1
-                @linkpair2 = find_pair(params[:slider1].to_i + 1, params[:slider2], params[:slider3],params[:category])
-                @linkpair3 = find_pair(params[:slider1].to_i + 2, params[:slider2], params[:slider3],params[:category])
+    @linkpair = find_pair(session[:slider1], session[:slider2], session[:slider3], session[:category])
+    case session[:slider1]
+        when at_limit?(session[:slider1])
+            if session[:slider1] == 1
+                @linkpair2 = find_pair(session[:slider1].to_i + 1, session[:slider2], session[:slider3],session[:category])
+                @linkpair3 = find_pair(session[:slider1].to_i + 2, session[:slider2], session[:slider3],session[:category])
             else
-                @linkpair2 = find_pair(params[:slider1].to_i - 1, params[:slider2], params[:slider3],params[:category])
-                @linkpair3 = find_pair(params[:slider1].to_i - 2, params[:slider2], params[:slider3],params[:category])
+                @linkpair2 = find_pair(session[:slider1].to_i - 1, session[:slider2], session[:slider3],session[:category])
+                @linkpair3 = find_pair(session[:slider1].to_i - 2, session[:slider2], session[:slider3],session[:category])
             end
         else
-                @linkpair2 = find_pair(params[:slider1].to_i + 1, params[:slider2], params[:slider3],params[:category])
-                @linkpair3 = find_pair(params[:slider1].to_i - 1, params[:slider2], params[:slider3],params[:category])
+                @linkpair2 = find_pair(session[:slider1].to_i + 1, session[:slider2], session[:slider3],session[:category])
+                @linkpair3 = find_pair(session[:slider1].to_i - 1, session[:slider2], session[:slider3],session[:category])
     end
   end
 
   def search
-    redirect_to action: 'results', slider1: params[:slider1], slider2: params[:slider2], slider3: params[:slider3],
-    category: params[:category]
+    session[:category] = params[:category]
+    session[:slider1] = params[:slider1]
+    session[:slider2] = params[:slider2]
+    session[:slider3] = params[:slider3]
+    redirect_to action: 'results', slider1: session[:slider1], slider2: session[:slider2], slider3: session[:slider3],
+    category: session[:category]
   end
 
   def casual_pairs
