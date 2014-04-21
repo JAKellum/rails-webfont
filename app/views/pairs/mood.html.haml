@@ -1,40 +1,19 @@
-.top-section
-  %header
-    %nav
-      %ul
-        %li.home-button= link_to "Back to home", root_path
-        %li.title Webfont
-.mid-section
-  .wrapper
-    %h1 What mood are you attempting to create?
-    .slider-container
-      = form_tag("/pairs/mood", method: "post") do
-        .mood-list-left
-          %h3 Playful
-          %h3 Light
-          %h3 Modern
-          / %h3 Cold
-        .sliders
-          %input#slider1{:type => "hidden", "name" => "slider1"}
-          %input#slider2{:type => "hidden", "name" => "slider2"}
-          %input#slider3{:type => "hidden", "name" => "slider3"}
-          = hidden_field_tag "category", params[:category]
-        :javascript
-          $('#slider1').simpleSlider({range: [1,5],snap: true,step: 1});
-          $('#slider2').simpleSlider({range: [1,5],snap: true,step: 1});
-          $('#slider3').simpleSlider({range: [1,5],snap: true,step: 1});
-        .mood-list-right
-          %h3 Serious
-          %h3 Dramatic
-          %h3 Classical
-          // %h3 Warm
-        %button.button.expand.radius{ type:"submit" } Create Results
-
-.btm-section
-  %footer
-    %nav.crumbs
-      %ul
-        = link_to "Tone", "/pairs/tone.html", class: "active"
-        = link_to "Mood", "#", class: "active"
-        = link_to "Results", "#"
-        = link_to "Export", "#"
+.progress-bar
+  .step
+    %p 2 of 4
+  .progress
+    %span.meter{style: "width: 50%"}
+.wrapper
+  %h1 2. What is the nature of the content?
+  .mood-panel
+    %ul.button-group.radius
+      %li.button.playful.current Playful
+      %li.button.serious Serious
+    %ul.button-group.radius
+      %li.button.light.current Light
+      %li.button.dramatic Dramatic
+    %ul.button-group
+      %li.button.modern Modern
+      %li.button.classical.current Classical
+  .next-button
+    %button.button.expand.radius{ type:"submit" } Create Results

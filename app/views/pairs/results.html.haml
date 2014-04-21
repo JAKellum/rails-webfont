@@ -1,41 +1,32 @@
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{@linkpair.headline_font}|#{@linkpair.body_font}|#{@linkpair2.headline_font}|#{@linkpair2.body_font}|#{@linkpair3.headline_font}|#{@linkpair3.body_font}">
-.top-section
-  %header
-    %nav
-      %ul
-        %li.home-button= link_to "Back to home", root_path
-        %li.title Webfont
-.mid-section
-  .wrapper
-    .button-wrap
-      %ul.button-group
-        %li.button.radius.current{"data-headline_font" => @linkpair.headline_font, "data-body_font" => @linkpair.body_font, "data-pair_id" => @linkpair.id} 1
-        %li.button.radius{"data-headline_font" => @linkpair2.headline_font, "data-body_font" => @linkpair2.body_font, "data-pair_id" => @linkpair2.id} 2
-        %li.button.radius{"data-headline_font" => @linkpair3.headline_font, "data-body_font" => @linkpair3.body_font, "data-pair_id" => @linkpair3.id} 3
-
-    #alphabet
-      %h1.title.h-result{style: "font-family: #{@linkpair.headline_font};"}The Origin of the Alphabet
-      %p.b-result{style: "font-family: #{@linkpair.body_font};"} The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
-      %h2.blockquote.h-result{style: "font-family: #{@linkpair.headline_font};"}"More important in its development however, was the picture."
-      %p.b-result{style: "font-family: #{@linkpair.body_font};"} We accordingly find evidences of devices to accomplish these ends associated with the earlist human remains. While the cave man was disputing food and shelter with the cave bear, the sabre-tooth tiger, and the mammoth in those
+.progress-bar
+  .step
+    %p 3 of 4
+  .progress
+    %span.meter{style: "width: 75%"}
+.wrapper
+  %h1 3. Based on your input, here are a few options:
+  .detail-panel
+    .option-buttons
       .type-style
         .headline-style
-          %h4 Headline Choice:
           %p.h-result{style: "font-family: #{@linkpair.headline_font};"}
             = @linkpair.headline_font
+          %h6 Headline:
         .body-style
-          %h4 Body Choice:
           %p.b-result{style: "font-family: #{@linkpair.body_font};"}
             = @linkpair.body_font
-      = form_tag("/pairs/export", method: "get") do
-        = hidden_field_tag "pair_id", @linkpair.id
-        %button.button.expand.radius{ type:"submit" } Use this type
-      /%p= link_to "Use this type style", pairs_export_path, class: "button expand radius"
-.btm-section
-  %footer
-    %nav.crumbs
-      %ul
-        = link_to "Tone", "/pairs/tone", class: "active"
-        = link_to "Mood", "/pairs/#{session[:category]}", class: "active"
-        = link_to "Results", "#", class: "active"
-        = link_to "Export", pairs_export_path
+          %h6 Body:
+      %ul.button-group
+        %li.button.radius.current{"data-headline_font" => @linkpair.headline_font, "data-body_font" => @linkpair.body_font, "data-pair_id" => @linkpair.id} Option 1
+        %li.button.radius{"data-headline_font" => @linkpair2.headline_font, "data-body_font" => @linkpair2.body_font, "data-pair_id" => @linkpair2.id} Option 2
+        %li.button.radius{"data-headline_font" => @linkpair3.headline_font, "data-body_font" => @linkpair3.body_font, "data-pair_id" => @linkpair3.id} Option 3
+  .alphabet
+    %h1.title.h-result{style: "font-family: #{@linkpair.headline_font};"}The Origin of the Alphabet
+    %p.b-result{style: "font-family: #{@linkpair.body_font};"} The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
+    %h2.blockquote.h-result{style: "font-family: #{@linkpair.headline_font};"}"More important in its development however, was the picture."
+    %p.b-result{style: "font-family: #{@linkpair.body_font};"} We accordingly find evidences of devices to accomplish these ends associated with the earlist human remains. While the cave man was disputing food and shelter with the cave bear, the sabre-tooth tiger, and the mammoth in those
+    = form_tag("/pairs/export", method: "get") do
+      = hidden_field_tag "pair_id", @linkpair.id
+      %button.button.expand.radius{ type:"submit" } Use this Option
+  /%p= link_to "Use this type style", pairs_export_path, class: "button expand radius"
