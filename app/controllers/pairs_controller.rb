@@ -42,6 +42,7 @@ class PairsController < ApplicationController
   end
 
   alias_method :formal_pairs, :casual_pairs
+  alias_method :all_pairs, :casual_pairs
 
   def home
   end

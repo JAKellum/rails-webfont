@@ -15,3 +15,15 @@ function bind_sliders() {
     $('#a3').val(data.value);
   });
 };
+
+$('li.button.playful').click(function(){
+  if(!$(this).hasClass('current')){
+    $(this).toggleClass('current');
+  }
+});
+
+$('li.button.serious').click(function(){
+  if(!$(this).hasClass('current')){
+    $(this).toggleClass('current');
+  }
+});

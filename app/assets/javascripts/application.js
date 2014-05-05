@@ -17,6 +17,47 @@
 
 $(function(){ $(document).foundation(); });
 
+$('li.button.playful').click(function(){
+  if(!$(this).hasClass('current')){
+    $('li.button.serious').toggleClass('current');
+    $(this).toggleClass('current');
+  }
+});
+
+$('li.button.serious').click(function(){
+  if(!$(this).hasClass('current')){
+    $('li.button.playful').toggleClass('current');
+    $(this).toggleClass('current');
+  }
+});
+
+$('li.button.light').click(function(){
+  if(!$(this).hasClass('current')){
+    $('li.button.dramatic').toggleClass('current');
+    $(this).toggleClass('current');
+  }
+});
+
+$('li.button.modern').click(function(){
+  if(!$(this).hasClass('current')){
+    $('li.button.classical').toggleClass('current');
+    $(this).toggleClass('current');
+  }
+});
+$('li.button.classical').click(function(){
+  if(!$(this).hasClass('current')){
+    $('li.button.modern').toggleClass('current');
+    $(this).toggleClass('current');
+  }
+});
+
+$('li.button.dramatic').click(function(){
+  if(!$(this).hasClass('current')){
+    $('li.button.light').toggleClass('current');
+    $(this).toggleClass('current');
+  }
+});
+
 $(function() {
   $('li.button.radius').click(function(){
     var newCurrent = $(this),
