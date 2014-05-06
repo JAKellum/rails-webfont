@@ -6,14 +6,21 @@
 .wrapper
   %h1 2. What is the nature of the content?
   .mood-panel
-    %ul.button-group.radius
-      %li.button.playful.current Playful
-      %li.button.serious Serious
-    %ul.button-group.radius
-      %li.button.light.current Light
-      %li.button.dramatic Dramatic
-    %ul.button-group
-      %li.button.modern Modern
-      %li.button.classical.current Classical
-  .next-button
-    %button.button.expand.radius{ type:"submit" } Create Results
+    = form_tag('pairs/mood', method: 'post') do
+      %ul.button-group.radius
+        %li.button.playful.current Playful
+        %li.button.serious Serious
+        = hidden_field_tag 'playful', 1
+      %ul.button-group.radius
+        %li.button.light.current Light
+        %li.button.dramatic Dramatic
+        = hidden_field_tag 'light', 1
+      %ul.button-group
+        %li.button.modern Modern
+        %li.button.classical.current Classical
+        = hidden_field_tag 'modern', 1
+    .next-button
+      = link_to pairs_results_path do
+        %button.button.expand.radius{ type:"submit" } Create Results
+
+
