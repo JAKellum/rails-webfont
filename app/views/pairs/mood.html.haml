@@ -10,7 +10,7 @@
       %ul.button-group.radius
         %li.button.playful.current Playful
         %li.button.serious Serious
-        = hidden_field_tag 'playful', 1
+        %input#playful{:type => "hidden", "name" => "playful", 'value' => 1}
       %ul.button-group.radius
         %li.button.light.current Light
         %li.button.dramatic Dramatic
@@ -20,7 +20,6 @@
         %li.button.classical.current Classical
         = hidden_field_tag 'modern', 1
     .next-button
-      = link_to pairs_results_path do
-        %button.button.expand.radius{ type:"submit" } Create Results
+      %button.button.expand.radius{ type:"submit" } Create Results
 
 

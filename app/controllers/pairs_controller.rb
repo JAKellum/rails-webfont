@@ -19,6 +19,10 @@ class PairsController < ApplicationController
   def tone
   end
 
+  def search
+    redirect_to '/results'
+  end
+
   def mood
   end
 
