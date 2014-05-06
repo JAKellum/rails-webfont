@@ -18,329 +18,329 @@ Pair.create([
     body_font: 'Flamenco',
     category_id: Category.where(name: 'formal').first.id,
     playful: 1,
-    classical: 1,
-    dramatic: 1
+    modern: 1,
+    light: 1
   },
   { headline_font: 'Shadows Into Light Two',
     body_font: 'Raleway',
     category_id: Category.where(name: 'casual').first.id,
     playful: 1,
-    classical: 1,
-    dramatic: 1
+    modern: 1,
+    light: 1
   },
   { headline_font: 'Quando',
     body_font: 'Varela Round',
     category_id: Category.where(name: 'casual').first.id,
     playful: 1,
-    classical: 3,
-    dramatic: 2
+    modern: 3,
+    light: 2
   }])
   # { headline_font: 'Quando',
   #   body_font: 'Rosario',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 3,
-  #   dramatic: 4
+  #   modern: 3,
+  #   light: 4
   # },
   # { headline_font: 'Quando',
   #   body_font: 'Fauna One',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 2,
-  #   dramatic: 4
+  #   modern: 2,
+  #   light: 4
   # },
   # { headline_font: 'Quando',
   #   body_font: 'Arimo',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Quando',
   #   body_font: 'Cabin',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Lemon',
   #   body_font: 'Josefin Sans',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 3,
-  #   dramatic: 2
+  #   modern: 3,
+  #   light: 2
   # },
   # { headline_font: 'Lemon',
   #   body_font: 'Muli',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Lemon',
   #   body_font: 'Roboto',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Lemon',
   #   body_font: 'PT Sans',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Lemon',
   #   body_font: 'Ubuntu',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Bowlby One',
   #   body_font: 'Alef',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 5,
-  #   dramatic: 2
+  #   modern: 5,
+  #   light: 2
   # },
   # { headline_font: 'Bowlby One',
   #   body_font: 'Open Sans',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 5,
-  #   dramatic: 2
+  #   modern: 5,
+  #   light: 2
   # },
   # { headline_font: 'Bowlby One',
   #   body_font: 'PT Sans',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 5,
-  #   dramatic: 2
+  #   modern: 5,
+  #   light: 2
   # },
   # { headline_font: 'Bowlby One',
   #   body_font: 'Chivo',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 5,
-  #   dramatic: 2
+  #   modern: 5,
+  #   light: 2
   # },
   # { headline_font: 'Bowlby One',
   #   body_font: 'Istok Web',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 5,
-  #   dramatic: 2
+  #   modern: 5,
+  #   light: 2
   # },
   # { headline_font: 'Lily Script One',
   #   body_font: 'Josefin Sans',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Lily Script One',
   #   body_font: 'Kite One',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 1,
-  #   classical: 4,
-  #   dramatic: 4
+  #   modern: 4,
+  #   light: 4
   # },
   # { headline_font: 'Lily Script One',
   #   body_font: 'Oranienbaum',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Lily Script One',
   #   body_font: 'Overlock',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Lily Script One',
   #   body_font: 'Ruluko',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Montserrat',
   #   body_font: 'Balthazar',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 5,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Montserrat',
   #   body_font: 'Droid Sans',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 4,
-  #   classical: 3,
-  #   dramatic: 2
+  #   modern: 3,
+  #   light: 2
   # },
   # { headline_font: 'Montserrat',
   #   body_font: 'Voces',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 4,
-  #   classical: 3,
-  #   dramatic: 2
+  #   modern: 3,
+  #   light: 2
   # },
   # { headline_font: 'Montserrat',
   #   body_font: 'Scada',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 4,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Montserrat',
   #   body_font: 'Actor',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 3,
-  #   dramatic: 2
+  #   modern: 3,
+  #   light: 2
   # },
   # { headline_font: 'Archivo Black',
   #   body_font: 'Lato',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 4,
-  #   classical: 5,
-  #   dramatic: 2
+  #   modern: 5,
+  #   light: 2
   # },
   # { headline_font: 'Archivo Black',
   #   body_font: 'Open Sans',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Archivo Black',
   #   body_font: 'Roboto',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Archivo Black',
   #   body_font: 'Source Sans Pro',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Archivo Black',
   #   body_font: 'Raleway',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 2,
-  #   classical: 3,
-  #   dramatic: 1
+  #   modern: 3,
+  #   light: 1
   # },
   # { headline_font: 'Gravitas One',
   #   body_font: 'Lato',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 5,
-  #   dramatic: 3
+  #   modern: 5,
+  #   light: 3
   # },
   # { headline_font: 'Gravitas One',
   #   body_font: 'Prata',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 2,
-  #   classical: 5,
-  #   dramatic: 5
+  #   modern: 5,
+  #   light: 5
   # },
   # { headline_font: 'Gravitas One',
   #   body_font: 'Tienne',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 5,
-  #   dramatic: 4
+  #   modern: 5,
+  #   light: 4
   # },
   # { headline_font: 'Gravitas One',
   #   body_font: 'Unna',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 4,
-  #   classical: 5,
-  #   dramatic: 4
+  #   modern: 5,
+  #   light: 4
   # },
   # { headline_font: 'Gravitas One',
   #   body_font: 'Vollkorn',
   #   category_id: Category.where(name: 'formal').first.id,
   #   playful: 3,
-  #   classical: 5,
-  #   dramatic: 5
+  #   modern: 5,
+  #   light: 5
   # },
   # { headline_font: 'Bree Serif',
   #   body_font: 'Josefin Sans',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 2,
-  #   dramatic: 2
+  #   modern: 2,
+  #   light: 2
   # },
   # { headline_font: 'Bree Serif',
   #   body_font: 'Istok Web',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Bree Serif',
   #   body_font: 'Convergence',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 4,
-  #   dramatic: 3
+  #   modern: 4,
+  #   light: 3
   # },
   # { headline_font: 'Bree Serif',
   #   body_font: 'Didact Gothic',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 3,
-  #   dramatic: 4
+  #   modern: 3,
+  #   light: 4
   # },
   # { headline_font: 'Bree Serif',
   #   body_font: 'Source Sans Pro',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 3,
-  #   dramatic: 3
+  #   modern: 3,
+  #   light: 3
   # },
   # { headline_font: 'Hammersmith One',
   #   body_font: 'Raleway',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 2,
-  #   classical: 3,
-  #   dramatic: 1
+  #   modern: 3,
+  #   light: 1
   # },
   # { headline_font: 'Hammersmith One',
   #   body_font: 'Roboto',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Hammersmith One',
   #   body_font: 'Lato',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Hammersmith One',
   #   body_font: 'Source Sans Pro',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 3,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # },
   # { headline_font: 'Hammersmith One',
   #   body_font: 'Molengo',
   #   category_id: Category.where(name: 'casual').first.id,
   #   playful: 4,
-  #   classical: 4,
-  #   dramatic: 2
+  #   modern: 4,
+  #   light: 2
   # }
 # ])

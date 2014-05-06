@@ -3,6 +3,7 @@ RailsWebfont::Application.routes.draw do
   get 'pairs/tone'
   get 'pairs/mood'
   post 'pairs/mood' => 'pairs#search'
+  post 'pairs/results'
   get 'pairs/results'
   get 'pairs/export'
   get 'pairs/casual' => 'pairs#casual_pairs', category: 'casual'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140505182918) do
+ActiveRecord::Schema.define(version: 20140506030226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20140505182918) do
     t.string   "headline_link"
     t.string   "body_font"
     t.string   "body_link"
-    t.boolean  "playful"
-    t.boolean  "classical"
-    t.boolean  "dramatic"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "playful"
+    t.boolean  "light"
+    t.boolean  "modern"
   end
 
   add_index "pairs", ["headline_font", "body_font"], name: "index_pairs_on_headline_font_and_body_font", unique: true, using: :btree
