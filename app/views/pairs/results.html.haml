@@ -1,4 +1,5 @@
--# <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{@pair.headline_font}|#{@pair.body_font}|#{@pair2.headline_font}|#{@pair2.body_font}|#{@pair3.headline_font}|#{@pair3.body_font}">
+-@pair.each do |p|
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{p.headline_font}|#{p.body_font}">
 .progress-bar
   .step
     %p 3 of 4
@@ -10,21 +11,23 @@
     .option-buttons
       .type-style
         .headline-style
-          %p.h-result{style: "font-family: #{@pair.headline_font};"}
-          %h6 Headline: #{@pair.headline_font}
+          %p.h-result{style: "font-family: #{@pair[0].headline_font};"}
+            %h6 Headline: #{@pair[0].headline_font}
         .body-style
-          %p.b-result{style: "font-family: #{@pair.body_font};"}
+          %p.b-result{style: "font-family: #{@pair[0].body_font};"}
 
-            %h6 Body: #{@pair.body_font}
+            %h6 Body: #{@pair[0].body_font}
       %ul.button-group
-        %li.button.radius.current{"data-headline_font" => @pair.headline_font, "data-body_font" => @pair.body_font, "data-pair_id" => @pair.id} Option 1
-        -# %li.button.radius{"data-headline_font" => @pair2.headline_font, "data-body_font" => @pair2.body_font, "data-pair_id" => @pair2.id} Option 2
-        -# %li.button.radius{"data-headline_font" => @pair3.headline_font, "data-body_font" => @pair3.body_font, "data-pair_id" => @pair3.id} Option 3
+        -@pair.each_with_index do |p, index|
+          %div.option{"data-index" => index}
+            %li.button.radius.current Option #{index + 1}
   .alphabet
-    %h1.title.h-result{style: "font-family: #{@pair.headline_font};"}The Origin of the Alphabet
-    %p.b-result{style: "font-family: #{@pair.body_font};"} The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
-    %h2.blockquote.h-result{style: "font-family: #{@pair.headline_font};"}"More important in its development however, was the picture."
-    %p.b-result{style: "font-family: #{@pair.body_font};"} We accordingly find evidences of devices to accomplish these ends associated with the earlist human remains. While the cave man was disputing food and shelter with the cave bear, the sabre-tooth tiger, and the mammoth in those
-    = form_tag("/pairs/export", method: "get") do
-      = hidden_field_tag "pair_id", @pair.id
-      %button.button.expand.radius{ type:"submit" } Use this Option
+    -@pair.each_with_index do |p, index|
+      %div{class: index == 0 ? "pair" : "pair hidden"}
+        %h1.title.h-result{style: "font-family: #{p.headline_font};"}The Origin of the Alphabet
+        %p.b-result{style: "font-family: #{p.body_font};"} The story of printing really begins with the earliest dawn of civilization. As soon as men developed a language, even of the simplest sort, they felt the necessity of a means of communication with those who were not present. This would be needed for the identification of property, the making of records, the sending of orders or information, the making of appointments, and many other purposes which would be developed by the needs of even the most redimentary civilization.
+        %h2.blockquote.h-result{style: "font-family: #{p.headline_font};"}"More important in its development however, was the picture."
+        %p.b-result{style: "font-family: #{p.body_font};"} We accordingly find evidences of devices to accomplish these ends associated with the earlist human remains. While the cave man was disputing food and shelter with the cave bear, the sabre-tooth tiger, and the mammoth in those
+        = form_tag("/pairs/export", method: "get") do
+          = hidden_field_tag "pair_id", p.id
+          %button.button.expand.radius{ type:"submit" } Use this Option

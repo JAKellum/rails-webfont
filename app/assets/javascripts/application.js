@@ -17,6 +17,14 @@
 
 $(function(){ $(document).foundation(); });
 
+$('.option').click(function(){
+  var index = ($(this).data('index'));
+  var pair_to_show = $('.pair')[index]
+  $('.pair').hide();
+  $(pair_to_show).show();
+});
+
+
 $('li.button.playful').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.serious').toggleClass('current');
@@ -65,7 +73,7 @@ $('li.button.classical').click(function(){
 });
 
 
-
+$('li.button.radius')
 // $(function() {
 //   $('li.button.radius').click(function(){
 //     var newCurrent = $(this),

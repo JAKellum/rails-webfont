@@ -5,14 +5,14 @@ class PairsController < ApplicationController
 
   def results
     if params[:category]
-      @pair =  Pair.find_by(category: params[:category], playful: params[:playful], modern: params[:modern], light: params[:light])
+      @pair =  Pair.where(category: Category.find_by_name(params[:category]), playful: params[:playful], modern: params[:modern], light: params[:light]).limit(3)
     else
-      @pair = Pair.find_by(playful: params[:playful], modern: params[:modern], light: params[:light])
+      @pair = Pair.where(playful: params[:playful], modern: params[:modern], light: params[:light]).limit(3)
     end
   end
 
   def casual_pairs
-    render 'mood'
+    render 'mood', category: 'casual'
   end
 
   alias_method :formal_pairs, :casual_pairs
@@ -20,38 +20,5 @@ class PairsController < ApplicationController
 
   private
 
-      def at_limit?(slider)
-          slider == 1 || slider == 5 ? true : false
-      end
-
-      def find_pair(slider1, slider2, slider3, category)
-        pair = Pair.find_by(slider1: slider1, slider2: slider2, slider3: slider3, category_id: Category.find_by_name(category))
-        if pair
-          pair
-        end
-
-        if !pair
-        [1,2,3,4].each do |x|
-          pair = Pair.find_by(slider1: (slider1.to_i - x).abs.to_s, slider2: slider2, slider3: slider3, category_id: Category.find_by_name(category))
-          break if pair
-          end
-        end
-
-      if !pair
-        [1,2,3,4].each do |x|
-          pair = Pair.find_by(slider1: slider1, slider2: (slider2.to_i - x).abs.to_s, slider3: slider3, category_id: Category.find_by_name(category))
-          break if pair
-          end
-      end
-
-        if !pair
-        [1,2,3,4].each do |x|
-          pair = Pair.find_by(slider1: slider1, slider2: slider2, slider3: (slider3.to_i - x).abs.to_s, category_id: Category.find_by_name(category))
-          break if pair
-          end
-      end
-
-        return pair || Pair.find(4)
-      end
 end
 

@@ -19,6 +19,8 @@
       = hidden_field_tag 'light', 1
       = hidden_field_tag 'modern', 1
       = hidden_field_tag 'playful', 1
+      - if params[:category]
+        = hidden_field_tag 'category', params[:category]
       .next-button
         %button.button.expand.radius{ type:"submit" } Create Results
 
