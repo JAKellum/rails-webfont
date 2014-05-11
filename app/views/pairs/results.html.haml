@@ -11,12 +11,13 @@
     .option-buttons
       .type-style
         -@pair.each_with_index do |p, index|
-          .headline-style{class: index == 0 ? "" : "hidden"}
-            %p#headline.h-result{style: "font-family: #{p.headline_font};"}
-              %h6#headline{style: "font-family: #{p.headline_font};"} Headline: #{p.headline_font}
-          .body-style{class: index == 0 ? "" : "hidden"}
-            %p#body.b-result{style: "font-family: #{p.body_font};"}
-              %h6#body{style: "font-family: #{p.body_font};"} Body: #{p.body_font}
+          .div.preview{class: index == 0 ? "" : "hidden"}
+            .headline-style
+              %p#headline.h-result{style: "font-family: #{p.headline_font};"}
+                %h6#headline{style: "font-family: #{p.headline_font};"} Headline: #{p.headline_font}
+            .body-style
+              %p#body.b-result{style: "font-family: #{p.body_font};"}
+                %h6#body{style: "font-family: #{p.body_font};"} Body: #{p.body_font}
       %ul.button-group
         -@pair.each_with_index do |p, index|
           %div.option{"data-index" => index, "data-headline" => p.headline_font, "data-body" => p.body_font}

@@ -18,15 +18,13 @@
 $(function(){ $(document).foundation(); });
 
 $('.option').click(function(){
-  var index = ($(this).data('index'));
-  var pair_to_show = $('.pair')[index]
-  var headline = $(this).data('headline');
+  var $index = ($(this).data('index'));
+  var $pair_to_show = $('.pair')[$index];
+  var $preview_to_show = $('.preview')[$index];
   $('.pair').hide();
-  $(pair_to_show).show();
-  $('#headline').css('font-family', function(headline){
-    return headline;
-  });
-  $('#body').css('font-family', $(this).data('body'));
+  $('.preview').hide();
+  $($preview_to_show).show();
+  $($pair_to_show).show();
 });
 
 function changeStyle(index){
