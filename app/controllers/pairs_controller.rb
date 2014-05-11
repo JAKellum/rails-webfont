@@ -5,28 +5,61 @@ class PairsController < ApplicationController
   end
 
   def results
-    if params[:category]
-      @pair =  pair_search(params[:playful],params[:modern], params[:light], params[:category])
-    else
-      @pair = pair_search(params[:playful],params[:modern],params[:light])
-    end
+      @pair =  pair_search(playful ,modern, light, category)
+      if @pair.size < 3
+        @pair << pair_search(!playful, modern, light, category).to_a
+      end
+      if @pair.size < 3
+        @pair << pair_search(playful, !modern, light, category).to_a
+      end
+      if @pair.size < 3
+        @pair << pair_search(playful, modern, !light, category).to_a
+      end
+      if @pair.size < 3
+        new_pair = pair_search(playful, modern, light).to_a
+        if !@pair.include(new_pair)
+          @pair << new_pair
+        end
+      end
+      if @pair.size < 3
+        new_pair = pair_search(!playful, modern, light).to_a
+        if !@pair.include(new_pair)
+          @pair << new_pair
+        end
+      end
+      if @pair.size < 3
+        new_pair = pair_search(playful, !modern, light).to_a
+        if !@pair.include(new_pair)
+          @pair << new_pair
+        end
+      end
+      if @pair.size < 3
+        new_pair = pair_search(playful, modern, !light).to_a
+        if !@pair.include(new_pair)
+          @pair << new_pair
+        end
+      end
+      if @pair.size< 3
+        @pair << Pair.order("RANDOM()").first
+      end
+      @pair = @pair.flatten
+      @pair = @pair[0..2]
   end
-
   def casual_pairs
     render 'mood'
   end
-
   alias_method :formal_pairs, :casual_pairs
   alias_method :all_pairs, :casual_pairs
 
   def pair_search(playful, modern, light, category = false)
-    if category
-      Pair.where(playful: params[:playful], modern: params[:modern], light: params[:light], category: Category.find_by_name(category)).limit(3)
-    else
-      Pair.where(playful: params[:playful], modern: params[:modern], light: params[:light]).limit(3)
-    end
+      Pair.find_pair(playful, modern, light, category)
   end
+
   private
+
+  [:playful, :modern, :light, :category].each do |action|
+    define_method(action){ return params[action.to_sym] }
+  end
 
 end
 

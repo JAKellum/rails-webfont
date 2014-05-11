@@ -16,9 +16,9 @@
       %ul.button-group
         %li.button.modern Modern
         %li.button.classical.current Classical
-      = hidden_field_tag 'light', 1
-      = hidden_field_tag 'modern', 1
-      = hidden_field_tag 'playful', 1
+      = hidden_field_tag 'light', true
+      = hidden_field_tag 'modern', true
+      = hidden_field_tag 'playful', true
       - if params[:category]
         = hidden_field_tag 'category', params[:category]
       .next-button

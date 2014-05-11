@@ -17,462 +17,462 @@ Pair.create([
   { headline_font: 'Abril Fatface',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Plaster',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Oleo Script',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Prata',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Marko One',
     body_font: 'Roboto Slab',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Racing Sans One',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Yeseva One',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Poller One',
     body_font: 'Roboto Slab',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Roboto Slab',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Londrine Solid',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Days One',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Acme',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 0
+    playful: true,
+    light: false,
+    modern: false
   },
   { headline_font: 'Dosis',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 1,
-    modern: 1
+    playful: true,
+    light: true,
+    modern: true
   },
   { headline_font: 'Holtwood One SC',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Lily Script One',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Sail',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 1,
-    modern: 0
+    playful: true,
+    light: true,
+    modern: false
   },
   { headline_font: 'Sorts Mill Goudy',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Boogaloo',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Lobster',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 0
+    playful: true,
+    light: false,
+    modern: false
   },
   { headline_font: 'Monoton',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Quando',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 1,
-    modern: 0
+    playful: true,
+    light: true,
+    modern: false
   },
   { headline_font: 'Lemon',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Patua One',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Alegreya SC',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Corben',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Salsa',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Dancing Script',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 1,
-    modern: 0
+    playful: true,
+    light: true,
+    modern: false
   },
   { headline_font: 'Bowlby One',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Cambo',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Montserrat',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Imprima',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Vidaloka',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 0
+    playful: true,
+    light: false,
+    modern: false
   },
   { headline_font: 'Baunmans',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Signika Negative',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Yanone Kaffeesatz',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Sansita One',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 0
+    playful: true,
+    light: false,
+    modern: false
   },
   { headline_font: 'Bitter',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Bree Serif',
     body_font: 'Roboto Slab',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Paytone One',
     body_font: 'Roboto Slab',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Belgrano',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Petit Formal Script',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 1,
-    modern: 0
+    playful: true,
+    light: true,
+    modern: false
   },
   { headline_font: 'Bangers',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Great Vibes',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Gravitas One',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Convergence',
     body_font: 'Roboto Slab',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Cantala One',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Cutive Mono',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Jockey One',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Ultra',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Limelight',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Lato',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Hammersmith One',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Playfair Display',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Oswald',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Rokkitt',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Domine',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 0
+    playful: true,
+    light: false,
+    modern: false
   },
   { headline_font: 'Roboto',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 1
+    playful: false,
+    light: false,
+    modern: true
   },
   { headline_font: 'Jura',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 1,
-    modern: 1
+    playful: true,
+    light: true,
+    modern: true
   },
   { headline_font: 'Amaranth',
     body_font: 'Vollkorn',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Poly',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 0,
-    modern: 0
+    playful: false,
+    light: false,
+    modern: false
   },
   { headline_font: 'Signika',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 0,
-    light: 1,
-    modern: 1
+    playful: false,
+    light: true,
+    modern: true
   },
   { headline_font: 'Italianno',
     body_font: 'Old Standard TT',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 0,
-    light: 1,
-    modern: 0
+    playful: false,
+    light: true,
+    modern: false
   },
   { headline_font: 'Bevan',
     body_font: 'Roboto Slab',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Kreon',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Coda Caption',
     body_font: 'Ubuntu',
     category_id: Category.where(name: 'casual').first.id,
-    playful: 1,
-    light: 0,
-    modern: 1
+    playful: true,
+    light: false,
+    modern: true
   },
   { headline_font: 'Merriweather',
     body_font: 'Open Sans',
     category_id: Category.where(name: 'formal').first.id,
-    playful: 1,
-    light: 1,
-    modern: 1
+    playful: true,
+    light: true,
+    modern: true
   }])

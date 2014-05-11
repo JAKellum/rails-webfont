@@ -37,7 +37,7 @@ function changeStyle(index){
 $('li.button.playful').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.serious').toggleClass('current');
-    $('input[name=playful]').val(1);
+    $('input[name=playful]').val(true);
     $(this).toggleClass('current');
   }
 });
@@ -45,7 +45,7 @@ $('li.button.playful').click(function(){
 $('li.button.serious').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.playful').toggleClass('current');
-    $('input[name=playful]').val(0);
+    $('input[name=playful]').val(false);
     $(this).toggleClass('current');
   }
 });
@@ -53,7 +53,7 @@ $('li.button.serious').click(function(){
 $('li.button.light').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.dramatic').toggleClass('current');
-    $('input[name=light]').val(1);
+    $('input[name=light]').val(true);
     $(this).toggleClass('current');
   }
 });
@@ -61,7 +61,7 @@ $('li.button.light').click(function(){
 $('li.button.dramatic').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.light').toggleClass('current');
-    $('input[name=light]').val(0);
+    $('input[name=light]').val(false);
     $(this).toggleClass('current');
   }
 });
@@ -69,14 +69,14 @@ $('li.button.dramatic').click(function(){
 $('li.button.modern').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.classical').toggleClass('current');
-    $('input[name=modern]').val(1);
+    $('input[name=modern]').val(true);
     $(this).toggleClass('current');
   }
 });
 $('li.button.classical').click(function(){
   if(!$(this).hasClass('current')){
     $('li.button.modern').toggleClass('current');
-    $('input[name=modern]').val(0);
+    $('input[name=modern]').val(false);
     $(this).toggleClass('current');
   }
 });

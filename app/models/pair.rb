@@ -1,12 +1,17 @@
 class Pair < ActiveRecord::Base
   belongs_to :category
 
-  def self.get_link_pair(slider1, slider2, slider3, category)
-    Pair.find_by(slider1: slider1, slider2: slider2, slider3: slider3, category_id: category)
-  end
-  
-  def self.find_pair(slider1, slider2, slider3, category)
-    Pair.find_by(slider1: slider1, slider2: slider2, slider3: slider3, category_id: Category.find_by_name(category))
+  def self.find_pair(playful, modern, light, category = false)
+    if category
+      Pair.where(playful: playful,
+                modern: modern,
+                light: light,
+                category: Category.find_by_name(category)).limit(3)
+    else
+      Pair.where(playful: playful,
+                 modern: modern,
+                 light: light).limit(3)
+    end
   end
 
   def link
