@@ -20,9 +20,18 @@ $(function(){ $(document).foundation(); });
 $('.option').click(function(){
   var index = ($(this).data('index'));
   var pair_to_show = $('.pair')[index]
+  var headline = $(this).data('headline');
   $('.pair').hide();
   $(pair_to_show).show();
+  $('#headline').css('font-family', function(headline){
+    return headline;
+  });
+  $('#body').css('font-family', $(this).data('body'));
 });
+
+function changeStyle(index){
+
+}
 
 
 $('li.button.playful').click(function(){

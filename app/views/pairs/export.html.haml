@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{@linkpair.headline_font}|#{@linkpair.body_font}">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=#{@pair.headline_font}|#{@pair.body_font}">
 .progress-bar
   .step
     %p 4 of 4
@@ -6,19 +6,19 @@
     %span.meter{style: "width: 100%"}
 .wrapper.center.green
   %h1 4. Your Result...
-  %h3{style: "font-family: '#{@linkpair.headline_font}', sans-serif;"} #{@linkpair.headline_font}
   %h2 Headline:
-  %h3{style: "font-family: '#{@linkpair.body_font}', serif;"} #{@linkpair.body_font}
+  %h3{style: "font-family: '#{@pair.headline_font}', sans-serif;"} #{@pair.headline_font}
   %h2 Body:
+  %h3{style: "font-family: '#{@pair.body_font}', serif;"} #{@pair.body_font}
   %a.modal.button.expand.radius{"data-reveal" => "", "data-reveal-id" => "myModal", :href => "#"} View Code
   %a.modal.button.expand.radius.bottom{:href => "../"} Start Over
   #myModal.reveal-modal{"data-reveal" => ""}
     %h2 You're almost done.
     %p Include this into the head of your html:
-    %pre &lt;link rel="stylesheet" href="#{@linkpair.link}"&gt;
+    %pre &lt;link rel="stylesheet" href="#{@pair.link}"&gt;
     %p Add these properties to your CSS styles:
     %pre
-      font-family: "#{@linkpair.headline_font}", sans-serif;
+      font-family: "#{@pair.headline_font}", sans-serif;
       %br
-      font-family: "#{@linkpair.body_font}", serif;
+      font-family: "#{@pair.body_font}", serif;
     %a.close-reveal-modal ×

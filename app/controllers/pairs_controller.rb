@@ -1,6 +1,7 @@
 class PairsController < ApplicationController
 
   def export
+    @pair = Pair.find(params[:pair_id])
   end
 
   def results
@@ -12,7 +13,7 @@ class PairsController < ApplicationController
   end
 
   def casual_pairs
-    render 'mood', category: 'casual'
+    render 'mood'
   end
 
   alias_method :formal_pairs, :casual_pairs

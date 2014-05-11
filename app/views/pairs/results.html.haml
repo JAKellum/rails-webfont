@@ -10,16 +10,16 @@
   .detail-panel
     .option-buttons
       .type-style
-        .headline-style
-          %p.h-result{style: "font-family: #{@pair[0].headline_font};"}
-            %h6 Headline: #{@pair[0].headline_font}
-        .body-style
-          %p.b-result{style: "font-family: #{@pair[0].body_font};"}
-
-            %h6 Body: #{@pair[0].body_font}
+        -@pair.each_with_index do |p, index|
+          .headline-style{class: index == 0 ? "" : "hidden"}
+            %p#headline.h-result{style: "font-family: #{p.headline_font};"}
+              %h6#headline{style: "font-family: #{p.headline_font};"} Headline: #{p.headline_font}
+          .body-style{class: index == 0 ? "" : "hidden"}
+            %p#body.b-result{style: "font-family: #{p.body_font};"}
+              %h6#body{style: "font-family: #{p.body_font};"} Body: #{p.body_font}
       %ul.button-group
         -@pair.each_with_index do |p, index|
-          %div.option{"data-index" => index}
+          %div.option{"data-index" => index, "data-headline" => p.headline_font, "data-body" => p.body_font}
             %li.button.radius.current Option #{index + 1}
   .alphabet
     -@pair.each_with_index do |p, index|
