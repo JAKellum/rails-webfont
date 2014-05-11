@@ -6,45 +6,18 @@ class PairsController < ApplicationController
 
   def results
       @pair =  pair_search(playful ,modern, light, category)
-      if @pair.size < 3
-        @pair << pair_search(!playful, modern, light, category).to_a
-      end
-      if @pair.size < 3
-        @pair << pair_search(playful, !modern, light, category).to_a
-      end
-      if @pair.size < 3
-        @pair << pair_search(playful, modern, !light, category).to_a
-      end
-      if @pair.size < 3
-        new_pair = pair_search(playful, modern, light).to_a
-        if !@pair.include(new_pair)
-          @pair << new_pair
-        end
-      end
-      if @pair.size < 3
-        new_pair = pair_search(!playful, modern, light).to_a
-        if !@pair.include(new_pair)
-          @pair << new_pair
-        end
-      end
-      if @pair.size < 3
-        new_pair = pair_search(playful, !modern, light).to_a
-        if !@pair.include(new_pair)
-          @pair << new_pair
-        end
-      end
-      if @pair.size < 3
-        new_pair = pair_search(playful, modern, !light).to_a
-        if !@pair.include(new_pair)
-          @pair << new_pair
-        end
-      end
-      if @pair.size< 3
-        @pair << Pair.order("RANDOM()").first
-      end
+      @pair << pair_search(!playful, modern, light, category) if not_3_results?
+      @pair << pair_search(playful, !modern, light, category) if not_3_results?
+      @pair << pair_search(playful, modern, !light, category) if not_3_results?
+      insert_if_not_included(pair_search(playful, modern, light)) if not_3_results?
+      insert_if_not_included(pair_search(!playful, modern, light)) if not_3_results?
+      insert_if_not_included(pair_search(playful, !modern, light)) if not_3_results?
+      insert_if_not_included(pair_search(playful, modern, !light)) if not_3_results?
+      @pair << Pair.order("RANDOM()").first if not_3_results?
       @pair = @pair.flatten
-      @pair = @pair[0..2]
+      @pair = @pair[FIRST_3]
   end
+
   def casual_pairs
     render 'mood'
   end
@@ -52,14 +25,27 @@ class PairsController < ApplicationController
   alias_method :all_pairs, :casual_pairs
 
   def pair_search(playful, modern, light, category = false)
-      Pair.find_pair(playful, modern, light, category)
+    Pair.find_pair(playful, modern, light, category).to_a
   end
 
   private
 
-  [:playful, :modern, :light, :category].each do |action|
-    define_method(action){ return params[action.to_sym] }
-  end
+    def not_3_results?
+      @pair.size < MINIMUM_RESULTS
+    end
+
+    def insert_if_not_included(new_pair)
+      if !@pair.include(new_pair)
+        @pair << new_pair
+      end
+    end
+
+    [:playful, :modern, :light, :category].each do |action|
+      define_method(action){ return params[action.to_sym] }
+    end
+
+    MINIMUM_RESULTS = 3
+    FIRST_3 = 0..2
 
 end
 

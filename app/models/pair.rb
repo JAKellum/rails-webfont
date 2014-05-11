@@ -1,14 +1,14 @@
 class Pair < ActiveRecord::Base
-  belongs_to :category
+  belongs_to :category, inverse_of: :pair
 
   def self.find_pair(playful, modern, light, category = false)
     if category
-      Pair.where(playful: playful,
+      pair = Pair.where(playful: playful,
                 modern: modern,
                 light: light,
                 category: Category.find_by_name(category)).limit(3)
     else
-      Pair.where(playful: playful,
+      pair = Pair.where(playful: playful,
                  modern: modern,
                  light: light).limit(3)
     end

@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :pairs
+  has_many :pairs, inverse_of: :pairs
 
   def self.casual
     Category.where(name: 'casual').first.id.to_i
