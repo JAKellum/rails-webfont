@@ -44,17 +44,28 @@ body
   @include grid-column(12)
   float: none
   padding-bottom: em-calc(20)
+  h1.step
+    font-size: em-calc(24)
+    @media #{$medium}
+      font-size: em-calc(42)
   h1.brand
     background: image-url('logo.png') no-repeat
     background-size: 100%
     text-indent: em-calc(-9999)
-    margin: em-calc(100 0 35 0)
+    margin: em-calc(140 0 0 0)
     @media #{$medium}
       height: em-calc(160)
+      margin: em-calc(100 0 35 0)
   .lead
     @include grid-column(12)
+    display: none
+    @media #{$medium}
+      display: inherit
   .list
     @include grid-column(12)
+    display: none
+    @media #{$medium}
+      display: inherit
     ul
       @include grid-row
       margin: em-calc(25 0 0 0)
@@ -80,10 +91,12 @@ body
   .mood-panel
     @include grid-row
     ul.button-group
-      @include grid-column(8,$offset:2)
+      @include grid-column(12)
       margin: em-calc(0 0 20 0)
       display: inline-block
       text-align: center
+      @media #{$medium}
+        @include grid-column(8,$offset:2)
       li.button
         @include grid-column(6)
         padding: em-calc(35 0)
@@ -146,9 +159,14 @@ h1
   font-size: em-calc(42)
 h1.title
   margin: em-calc(0 0 30 0)
-h2.blockquote
   font-size: em-calc(28)
+  @media #{$medium}
+    font-size: em-calc(42)
+h2.blockquote
+  font-size: em-calc(20)
   margin-bottom: em-calc(20)
+  @media #{$medium}
+    font-family: em-calc(28)
 h6
   color: $primary-color
   font-size: em-calc(18)
