@@ -27,55 +27,56 @@ $('.option').click(function(){
   $($pair_to_show).show();
 });
 
-function changeStyle(index){
-
-}
+$('li.button.radius').click(function(){
+ $('li.button.radius').removeClass('current');
+ $(this).addClass('current');
+})
 
 
 $('li.button.playful').click(function(){
   if(!$(this).hasClass('current')){
-    $('li.button.serious').toggleClass('current');
+    $('li.button.serious').removeClass('current');
     $('input[name=playful]').val(true);
-    $(this).toggleClass('current');
+    $(this).addClass('current');
   }
 });
 
 $('li.button.serious').click(function(){
   if(!$(this).hasClass('current')){
-    $('li.button.playful').toggleClass('current');
+    $('li.button.playful').removeClass('current');
     $('input[name=playful]').val(false);
-    $(this).toggleClass('current');
+    $(this).addClass('current');
   }
 });
 
 $('li.button.light').click(function(){
   if(!$(this).hasClass('current')){
-    $('li.button.dramatic').toggleClass('current');
+    $('li.button.dramatic').removeClass('current');
     $('input[name=light]').val(true);
-    $(this).toggleClass('current');
+    $(this).addClass('current');
   }
 });
 
 $('li.button.dramatic').click(function(){
   if(!$(this).hasClass('current')){
-    $('li.button.light').toggleClass('current');
+    $('li.button.light').removeClass('current');
     $('input[name=light]').val(false);
-    $(this).toggleClass('current');
+    $(this).addClass('current');
   }
 });
 
 $('li.button.modern').click(function(){
   if(!$(this).hasClass('current')){
-    $('li.button.classical').toggleClass('current');
+    $('li.button.classical').removeClass('current');
     $('input[name=modern]').val(true);
-    $(this).toggleClass('current');
+    $(this).addClass('current');
   }
 });
 $('li.button.classical').click(function(){
   if(!$(this).hasClass('current')){
-    $('li.button.modern').toggleClass('current');
+    $('li.button.modern').removeClass('current');
     $('input[name=modern]').val(false);
-    $(this).toggleClass('current');
+    $(this).addClass('current');
   }
 });
 

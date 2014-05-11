@@ -21,7 +21,7 @@
       %ul.button-group
         -@pair.each_with_index do |p, index|
           %div.option{"data-index" => index, "data-headline" => p.headline_font, "data-body" => p.body_font}
-            %li.button.radius.current Option #{index + 1}
+            %li.button.radius{class: index == 0 ? "current" : ""}Option #{index + 1}
   .alphabet
     -@pair.each_with_index do |p, index|
       %div{class: index == 0 ? "pair" : "pair hidden"}

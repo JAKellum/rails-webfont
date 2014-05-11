@@ -8,17 +8,17 @@
   .mood-panel
     = form_tag('/pairs/results', method: 'post') do
       %ul.button-group.radius
-        %li.button.playful.current Playful
+        %li.button.playful Playful
         %li.button.serious Serious
       %ul.button-group.radius
-        %li.button.light.current Light
+        %li.button.light Light
         %li.button.dramatic Dramatic
       %ul.button-group
-        %li.button.modern.current Modern
+        %li.button.modern Modern
         %li.button.classical Classical
-      = hidden_field_tag 'light', true
-      = hidden_field_tag 'modern', true
-      = hidden_field_tag 'playful', true
+      = hidden_field_tag 'light', false
+      = hidden_field_tag 'modern', false
+      = hidden_field_tag 'playful', false
       - if params[:category]
         = hidden_field_tag 'category', params[:category]
       .next-button

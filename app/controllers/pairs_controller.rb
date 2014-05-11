@@ -25,7 +25,11 @@ class PairsController < ApplicationController
   alias_method :all_pairs, :casual_pairs
 
   def pair_search(playful, modern, light, category = false)
-    Pair.find_pair(playful, modern, light, category).to_a
+    if(playful == false && modern == false && light == false && category==false)
+      Pair.random
+    else
+      Pair.find_pair(playful, modern, light, category).to_a
+    end
   end
 
   private
