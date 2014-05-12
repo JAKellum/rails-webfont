@@ -14,10 +14,10 @@
           .div.preview{class: index == 0 ? "" : "hidden"}
             .headline-style
               %p#headline.h-result
-                %h6#headline  Headline: <span style="font-family: #{p.headline_font};">#{p.headline_font}</span>
+                %h6#headline  Headline: <span style="font-family: #{p.headline_font}; color: #222222;">#{p.headline_font}</span>
             .body-style
               %p#body.b-result
-                %h6#body Body: <span style="font-family:#{p.body_font};"> #{p.body_font} </span>
+                %h6#body Body: <span style="font-family:#{p.body_font}; color: #222222;"> #{p.body_font} </span>
       %ul.button-group
         -@pair.each_with_index do |p, index|
           %div.option{"data-index" => index, "data-headline" => p.headline_font, "data-body" => p.body_font}
